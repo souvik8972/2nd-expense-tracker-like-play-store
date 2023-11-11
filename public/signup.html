@@ -14,7 +14,7 @@
 			<img src="img/bg.svg">
 		</div>
 		<div class="login-content">
-			<form action="" method="post">
+			<form action="" id="signupform">
 				<img src="img/avatar.svg">
 				<h2 class="title">Welcome</h2>
            		<div class="input-div">
@@ -23,7 +23,7 @@
            		   </div>
            		   <div class="div">
            		   		
-           		   		<input type="email" class="input" placeholder="Your Email" name="email">
+           		   		<input type="email" class="input" id="email" placeholder="Your Email" name="email">
            		   </div>
            		</div>
            		<div class="input-div one">
@@ -32,7 +32,7 @@
            		   </div>
            		   <div class="div">
            		   		
-           		   		<input type="text" class="input" name="username" placeholder="Username">
+           		   		<input type="text" class="input" id="username" name="username" placeholder="Username">
            		   </div>
            		</div>
            		<div class="input-div pass">
@@ -41,7 +41,7 @@
            		   </div>
            		   <div class="div">
            		    	
-           		    	<input type="password" class="input" name="password" placeholder="Password">
+           		    	<input type="password" class="input" id="password" name="password" placeholder="Password">
             	   </div>
             	</div>
               
@@ -50,6 +50,8 @@
             </form>
         </div>
     </div>
-   t>
+   
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<script src="./js/signup.js"></script>
 </body>
 </html>
