@@ -224,3 +224,93 @@ a:hover{
 		justify-content: center;
 	}
 }
+body {
+	font-family: 'Arial', sans-serif;
+	background-color: #f4f4f4;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+
+/* Container for both success and error messages */
+.success-container, .error {
+  position: absolute;
+  left: 50%;
+  text-align: center;
+  padding: 20px;
+  background-color: #29C08C;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translate(-50%, -50%);
+  transition: visibility 0.8s ease, opacity 0.8s ease; /* Add opacity for a smooth fade effect */
+  visibility: hidden;
+  opacity: 0; /* Start with opacity 0 to make it transparent */
+}
+
+/* Show container on success */
+.showSuccess {
+  visibility: visible;
+  opacity: 1; /* Fade in by setting opacity to 1 */
+}
+
+/* Show container on error */
+.errorpop {
+  visibility: visible;
+  opacity: 1; /* Fade in by setting opacity to 1 */
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 18px;
+}
+
+.button {
+  display: inline-block;
+  position: absolute;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #fff;
+  color: #29C08C;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 2px solid #29C08C;
+  transform: translate(-50%, -50%);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button:hover {
+  background-color: #29C08C;
+  color: #fff;
+}
+
+.successLog{
+	position: absolute;
+	left: 50%;
+	top:5%;
+	font-size: smaller;
+	text-transform: capitalize;
+	text-align: center;
+	padding: 10px;
+	background-color: #29C08C;
+	color: #fff;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	transform: translate(-50%, -50%);
+	transition: visibility 0.8s ease, opacity 0.8s ease; /* Add opacity for a smooth fade effect */
+	visibility: hidden;
+	opacity: 0;
+
+}
+.showlogin{
+	visibility: visible;
+  opacity: 1
+
+}

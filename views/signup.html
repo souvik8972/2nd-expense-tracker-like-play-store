@@ -2,20 +2,20 @@
 <html>
 <head>
 	<title>Animated Login Form</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-	<img class="wave" src="img/wave.png">
+	<img class="wave" src="/img/wave.png">
 	<div class="container">
 		<div class="img">
-			<img src="img/bg.svg">
+			<img src="/img/bg.svg">
 		</div>
 		<div class="login-content">
 			<form action="" id="signupform">
-				<img src="img/avatar.svg">
+				<img src="/img/avatar.svg">
 				<h2 class="title">Welcome</h2>
            		<div class="input-div">
            		   <div class="i">
@@ -23,7 +23,7 @@
            		   </div>
            		   <div class="div">
            		   		
-           		   		<input type="email" class="input" id="email" placeholder="Your Email" name="email">
+           		   		<input type="email" class="input" id="email" placeholder="Your Email" name="email" required>
            		   </div>
            		</div>
            		<div class="input-div one">
@@ -32,7 +32,7 @@
            		   </div>
            		   <div class="div">
            		   		
-           		   		<input type="text" class="input" id="username" name="username" placeholder="Username">
+           		   		<input type="text" class="input" id="username" name="username" placeholder="Username" required>
            		   </div>
            		</div>
            		<div class="input-div pass">
@@ -41,17 +41,29 @@
            		   </div>
            		   <div class="div">
            		    	
-           		    	<input type="password" class="input" id="password" name="password" placeholder="Password">
+           		    	<input type="password" class="input" id="password" name="password" placeholder="Password" required>
             	   </div>
             	</div>
               
-            	<a href="#"><span id="existing">Exsisting user ? </span>log In</a>
+            	<a href="./login"><span id="existing">Exsisting user ? </span>log In</a>
             	<input type="submit" class="btn" value="Sign Up">
             </form>
         </div>
     </div>
+	<div class="success-container" id="success">
+        <h1>Success!</h1>
+        <p>Congratulations!user created successful</p>
+        <a href="./login" class="button">OK</a>
+    </div>
+	<div class="error" id="error">
+        <h1>Error</h1>
+        <p>Email alredy Exist</p>
+        <a href="./signup" class="button">OK</a>
+    </div>
+	
+
    
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-	<script src="./js/signup.js"></script>
+	<script src="/js/signup.js"></script>
 </body>
 </html>

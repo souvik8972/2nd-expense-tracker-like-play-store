@@ -1,4 +1,5 @@
 document.getElementById("loginForm").addEventListener("submit", logedIn);
+const success=document.getElementById("success")
 
 async function logedIn(e) {
     e.preventDefault();
@@ -12,10 +13,14 @@ async function logedIn(e) {
         });
 
         if (response.status === 200) {
-            alert("Login successful");
-            console.log(response.data);
-            // Optionally, redirect to a new page or update the UI
-            window.location.href = "./dashboard.html"; // Replace with your desired success page URL
+
+            success.classList.add("showlogin")
+            setTimeout(()=>{
+                window.location.href = "/user/dashboard";
+                success.classList.remove("showlogin");
+            },2000)
+            
+             // Replace with your desired success page URL
         } else {
             console.log("Error while logging in");
             // Optionally, show an error message to the user
