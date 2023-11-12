@@ -1,25 +1,35 @@
 const db = require("../database/db");
 const path = require("path");
-const util= require("util");
+const util = require("util");
 const query = util.promisify(db.query).bind(db);
 
-exports.userloginPost=(req, res) => {
+exports.userloginPost = async (req, res) => {
+  try {
     const { email, password } = req.body;
-    const sql = "SELECT * FROM users WHERE email=? AND password=?";
+    const sql = "SELECT * FROM users WHERE email=?";
+   
 
-    db.query(sql, [email, password], (err, result) => {
-        if (err) {
-            console.error(err);
-            res.status(500).send("Error during login");
-        } else {
-            if (result.length > 0) {
-                res.redirect('/user/dashboard')
-            } else {
-                res.redirect("/user/login");
-            }
-        }
-    });
-}
+    const result = await query(sql, [email]);
+   
+
+    if (result.length > 0) {
+      const user = result[0];
+     
+      // Note: In a production environment, you should use a secure password hashing library like bcrypt.
+      if (user.password == password) {
+        res.status(200).redirect("/user/dashboard");
+      } else {
+        res.status(401).json({meassage:"Unauthorized: Incorrect username or password"});
+      }
+    } else {
+      res.status(404);
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500);
+  }
+};
+
 exports.userloginget= (req, res) => {
     res.sendFile(path.join(__dirname, "../views/login.html"));
 }
