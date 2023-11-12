@@ -291,7 +291,7 @@ p {
   color: #fff;
 }
 
-.successLog{
+.successLog,.errorLog{
 	position: absolute;
 	left: 50%;
 	top:5%;
@@ -309,7 +309,7 @@ p {
 	opacity: 0;
 
 }
-.showlogin{
+.showlogin,.showerror{
 	visibility: visible;
   opacity: 1
 

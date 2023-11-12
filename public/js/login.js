@@ -1,6 +1,6 @@
 document.getElementById("loginForm").addEventListener("submit", logedIn);
 const success = document.getElementById("success");
-const error = document.getElementById("error"); // Assuming you have an element with id "error"
+const errorlog = document.getElementById("error"); // Assuming you have an element with id "error"
 
 async function logedIn(e) {
     e.preventDefault();
@@ -26,6 +26,12 @@ async function logedIn(e) {
             
         }
     } catch (err) {
+        
+        errorlog.classList.add("showerror");
+        setTimeout(() => {
+    
+            errorlog.classList.remove("showerror");
+        }, 2000);
         console.error(err);
         // Optionally, show an error message to the user
     }
