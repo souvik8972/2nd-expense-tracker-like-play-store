@@ -1,4 +1,4 @@
-const controller=require("../controller/userController")
+const controller=require("../controller/signupController")
 const express=require("express")
 const route=express.Router()
 const path = require("path");
